@@ -3,9 +3,6 @@ const app = express();
 const port = 8080;
 const session = require('express-session');
 const models = require('./models');
-
-
-
 const rotasIndex = require('./routes/rotasIndex');
 const rotasHome = require('./routes/rotasHome');
 const rotasLogin = require('./routes/rotasLogin');
