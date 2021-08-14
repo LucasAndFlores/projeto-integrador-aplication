@@ -13,6 +13,7 @@ const transacoesController = {
                     data_transacao,
                     valor,
                     meio_pagamento,
+                    fk_categoria_id: categorias
                 })
 
                 return res.redirect('transacoes')
@@ -23,8 +24,8 @@ const transacoesController = {
             limit: 7,
             order: [['data_transacao', 'DESC']]
         });
-        let categorias = await models.categoria.findAll({});
-        res.render('transacoes', {transacoesexistente, categorias});
+        let categoriasTransacoes = await models.categoria.findAll({});
+        res.render('transacoes', {transacoesexistente, categoriasTransacoes});
     },
 }
 

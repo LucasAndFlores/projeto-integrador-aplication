@@ -43,7 +43,7 @@
                 <div class="estiloInput">
                     <label for="categoria"> Categoria </label>
                     <select name="categorias" id="">categoria
-                    <% categorias.forEach(categoria => { %>
+                    <% categoriasTransacoes.forEach(categoria => { %>
                         <option value=<%= categoria.id %> >  <%= categoria.nome_categoria %>   </option> 
                     <% }) %>
                 </select>
