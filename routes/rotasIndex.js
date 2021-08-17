@@ -3,7 +3,8 @@ const router = express.Router();
 const Usuarios = require('../models');
 const IndexController = require('../controllers/IndexController');
 const transacoesController = require('../controllers/transacoesController');
-const cartoesController = require('../controllers/cartoesController')
+const cartoesController = require('../controllers/cartoesController');
+const categoriaController = require('../controllers/categoriasController');
 const { salvarForm } = require('../controllers/IndexController');
 
 
@@ -18,6 +19,7 @@ router.post('/entradas', IndexController.cadastrarEntradas);
 router.get('/objetivos', IndexController.verObjetivos);
 router.get('/configuracoes', IndexController.verConfiguracoes);
 router.get('/index', IndexController.AcessoHome);
+router.get('/categorias', categoriaController.todasCategorias )
  
 
 module.exports = router;
