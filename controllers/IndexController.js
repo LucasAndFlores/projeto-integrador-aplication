@@ -1,5 +1,7 @@
 const router = require("../routes/rotasIndex");
 const models = require('../models')
+const fs = require('fs');
+const path = require('path');
 
 const IndexController = {
     AcessoHome: (req, res) => {
@@ -19,9 +21,36 @@ const IndexController = {
         res.render("objetivos_v1");
     },
 
-    verConfiguracoes: (req, res) => {
-        res.render('configuracoes');
+    verConfiguracoes: async (req, res) => {        
+        let { id } = req.session.usuario
+        let usuario = await models.usuarios.findOne({
+            where: {id}
+        })
+        res.render('configuracoes', { usuario });
     },
+
+    editarUsuarios: async (req, res) => {
+        const { id } = req.params
+        console.log(req.params)
+        const { nome, sobrenome, telefone } = req.body;
+        console.log("Body", req.body)
+        const usuario = await models.usuarios.update({ 
+            nome, 
+            sobrenome, 
+            telefone 
+        },
+        {
+            where: {
+                id
+            }
+        });        
+        console.log(usuario)
+        /* let usuarioAtualizado = await models.usuarios.findByPk(id) */
+        res.render('configuracoes', /* usuarioAtualizado */{ usuario: {nome, sobrenome, telefone} })
+            
+    },
+
+    
 
     salvarForm: (req, res) => {
 

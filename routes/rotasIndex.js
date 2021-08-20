@@ -18,6 +18,7 @@ router.get('/entradas', IndexController.verEntradas);
 router.post('/entradas', IndexController.cadastrarEntradas);
 router.get('/objetivos', IndexController.verObjetivos);
 router.get('/configuracoes', IndexController.verConfiguracoes);
+router.put('/usuarios/:id', IndexController.editarUsuarios);
 router.get('/index', IndexController.AcessoHome);
 router.get('/categorias', categoriaController.todasCategorias )
  
