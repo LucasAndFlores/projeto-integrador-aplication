@@ -8,6 +8,7 @@ const rotasHome = require('./routes/rotasHome');
 const rotasLogin = require('./routes/rotasLogin');
 const rotasCadastro = require('./routes/rotasCadastro');
 const { Session } = require('express-session');
+const methodOverride = require('method-override')
 
 app.use(session({
     secret:"projeto-economize-mais",
@@ -20,6 +21,7 @@ app.use(express.static('public'));
 app.use('/storage', express.static('storage'))
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
+app.use(methodOverride('_method'));
 
 
 app.use('/', rotasHome);
