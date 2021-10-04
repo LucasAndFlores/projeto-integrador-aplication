@@ -43,9 +43,6 @@
                 <div class="estiloInput">
                     <label for="categoria"> Categoria </label>
                     <select name="categorias" id="">categoria
-                    <% categoriasTransacoes.forEach(categoria => { %>
-                        <option value=<%= categoria.id %> >  <%= categoria.nome_categoria %>   </option> 
-                    <% }) %>
                 </select>
                 </div>
                 <button type="submit" class="botaoPlus">
@@ -67,14 +64,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <% transacoesexistente.forEach(despesa => { %>
-                            <tr>         
-                                  <td> <%= despesa.loja %>  </td>
-                                  <td> <%= despesa.meio_pagamento %>  </td>
-                                  <td> <%= despesa.data_transacao %>  </td>
-                                  <td> R$ <%= despesa.valor %>  </td>
-                            </tr>
-                            <% }) %>
+                         
                         </tbody>
                     </table>
                 </div>

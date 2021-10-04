@@ -1,4 +1,4 @@
-const models = require('../models')
+//const models = require('../models')
 // const config = require('../config/database')
 // const Sequelize = require('sequelize');
 // const Op = Sequelize.Op;
@@ -6,7 +6,7 @@ const models = require('../models')
 
 const transacoesController = {
 
-    CadastrarTransacaoSequelize: async (req, res) => {
+   /* CadastrarTransacaoSequelize: async (req, res) => {
         let { loja, data_transacao, meio_pagamento, valor, categorias } = req.body;
         const inserir = await models.transacoe.create({
                     loja,
@@ -17,15 +17,17 @@ const transacoesController = {
                 })
 
                 return res.redirect('transacoes')
-    },
+    },*/
 
     verTransacoes: async (req, res) => {
-        let transacoesexistente = await models.transacoe.findAll({ 
+        /*let transacoesexistente = await models.transacoe.findAll({ 
             limit: 7,
             order: [['data_transacao', 'DESC']]
         });
-        let categoriasTransacoes = await models.categoria.findAll({});
-        res.render('transacoes', {transacoesexistente, categoriasTransacoes});
+        let categoriasTransacoes = await models.categoria.findAll({});*/
+        //res.render('transacoes', {transacoesexistente, categoriasTransacoes});
+
+        res.render('transacoes');
     },
 }
 
